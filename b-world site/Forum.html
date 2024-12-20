@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css.css">
+    <link rel="stylesheet" href="./forum/forum.css">
+    <script src="forum/forum.js" defer></script>
+    <title>B-World | Форум</title>
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <img src="res/logoaero.png" height="300px" alt="B-World logo"/>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <nav class="side-nav">
+                <h3>Меню</h3>
+                <ul>
+                    <li><a href="./page.html#download">Скачать</a></li>
+                    <li><a href="./Forum.html">Форум</a></li>
+                    <li><a href="./page.html">Главная</a></li>
+                    <li><a href="#support">Поддержка</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="forum-content">
+            <div class="forum-header">
+                <h1>Форум B-World</h1>
+                <button id="new-topic-btn" class="create-topic-btn">Создать тему</button>
+            </div>
+
+            <div class="forum-categories">
+                <div class="category">
+                    <h2>Общие обсуждения</h2>
+                    <div class="topics" id="general-topics">
+                        <!-- Темы будут добавляться динамически -->
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h2>Техническая поддержка</h2>
+                    <div class="topics" id="support-topics">
+                        <!-- Темы будут добавляться динамически -->
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h2>Моды и плагины</h2>
+                    <div class="topics" id="mods-topics">
+                        <!-- Темы будут добавляться динамически -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Модальное окно для создания новой темы -->
+            <div id="new-topic-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Создать новую тему</h2>
+                    <form id="new-topic-form">
+                        <select name="category" id="category-select">
+                            <option value="general">Общие обсуждения</option>
+                            <option value="support">Техническая поддержка</option>
+                            <option value="mods">Моды и плагины</option>
+                        </select>
+                        <input type="text" id="topic-title" placeholder="Название темы" required>
+                        <textarea id="topic-content" placeholder="Содержание темы" required></textarea>
+                        <button type="submit">Создать тему</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <!-- Тот же футер, что и на главной странице -->
+    </footer>
+</body>
+</html>
