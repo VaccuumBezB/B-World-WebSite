@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <title>B-World | Download</title>
+</head>
+<body>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" type="module"></script>
+    <script type="module">
+        import * as THREE from 'https://cdn.jsdelivr.net/npm/three/build/three.module.js';
+        //import swal from 'https://unpkg.com/sweetalert/dist/sweetalert.min.js';
+        var raycaster = new THREE.Raycaster();
+        var mouse = new THREE.Vector2();
+        
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        document.body.appendChild( renderer.domElement );
+
+
+        const geometry = new THREE.BoxGeometry( 1, 1, 1 );
+
+        const materialdev = new THREE.MeshBasicMaterial( {wireframe: true} );
+        const materialnorm = new THREE.MeshBasicMaterial( {} );
+        const materiallts = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+
+        const cube0 = new THREE.Mesh( geometry, materialdev );
+        cube0.position.x = 2;
+        scene.add( cube0 );
+
+        const cube1 = new THREE.Mesh( geometry, materialnorm );
+        cube1.position.x = -1;
+        cube1.position.z = -3;
+        scene.add( cube1 );
+
+        const cube2 = new THREE.Mesh( geometry, materiallts );
+        cube2.position.x= 3;
+        cube2.position.z=-8;
+        scene.add( cube2 );
+        
+
+
+        camera.position.z = 5;
+
+        function animate() 
+        {
+	        requestAnimationFrame( animate );
+            cube0.rotation.x += 0.01;
+            cube0.rotation.y += 0.01;
+            cube1.rotation.x += 0.01;
+            cube1.rotation.y += 0.01;
+            cube2.rotation.x += 0.01;
+            cube2.rotation.y += 0.01;
+            camera.position.z -= 0.01;
+	        renderer.render( scene, camera );
+        }
+        animate();
+        function sleep(ms) 
+        {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        function clickOnSprite(event){
+            console.log("CLICK! " + event.clientX + ", " + event.clientY);      
+
+            mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+            mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1; 
+            raycaster.setFromCamera( mouse, camera );   
+
+            var intersects = raycaster.intersectObjects(scene.children);
+            console.log(intersects[0].object.id);
+            if(intersects[0].object.id == 11)
+            {
+                swal({title: "Установка B-World 0.1.1", 
+                    icon: "success",
+                    text: "Если установка не началась, скачайте в тг канале" 
+                });
+            } 
+            else if(intersects[0].object.id == 12)
+            {
+                swal({title: "Установка B-World 0.1.1", 
+                    icon: "success",
+                    text: "Если установка не началась, скачайте в тг канале" 
+                });
+                const downloadUrl = './path/to/your/B-World-0.1.1.exe'; // Укажите правильный путь к файлу
+                const link = document.createElement('a');
+                link.href = downloadUrl;
+                link.download = 'B-World-0.1.1.exe';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+            else if(intersects[0].object.id == 13)
+            {
+                swal({title: "Установка B-World 0.1.1", 
+                    icon: "success",
+                    text: "Если установка не началась, скачайте в тг канале" 
+                });
+                
+            }
+            else
+            {
+                swal({
+                    title: "Ошибка",
+                    icon: "error"
+                });
+            }
+        }
+        addEventListener('click', (event) => {clickOnSprite(event)})
+    </script>
+
+</body>
+</html>
