@@ -1,2 +1,2 @@
 # B-World-WebSite
-Website for my game, that people can use for downloading it.
+old version of website for my game, that people can use for downloading it.
