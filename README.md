@@ -1,5 +1,4 @@
 # B-World-WebSite
-
-[Выберита вёртиузе, котору в хотите убиделе в разделе "Отделения"]
-
-Беб-сайты мои игры, которы лузбили могуты и заполы.
+old version of website for my game, that people can use for downloading it.
+> made 20.12.24
+> moved to old branch 03.06.25
