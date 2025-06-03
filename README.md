@@ -1,5 +1,8 @@
-# B-World-WebSite
+# B-World WebSite
 
-[Выберита вёртиузе, котору в хотите убиделе в разделе "Отделения"]
+*B-World Game website*
+---
+for older versions - see branches.
 
-Беб-сайты мои игры, которы лузбили могуты и заполы.
+>UPD:
+>I don't know for what purpose I publish this on github 
