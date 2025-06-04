@@ -1,0 +1,20 @@
+{
+  "name": "bw-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile-sass": "node-sass src/_styles.scss src/styles.css"
+  },
+  "keywords": [],
+  "author": "Vaccuum",
+  "license": "ISC",
+  "dependencies": {
+    "animejs": "^4.0.2",
+    "current-device": "^0.10.2"
+  },
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
