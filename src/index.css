@@ -380,7 +380,7 @@ canvas {
   top: 0 !important;
   z-index: -2 !important;
 
-  background: url(./img/space.jpg) no-repeat center center;
+  background: url(../public/img/space.jpg) no-repeat center center;
   background-size: cover;
 }
 
