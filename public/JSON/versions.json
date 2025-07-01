@@ -1,0 +1,25 @@
+{
+    "versions":
+    [
+        {
+            "displayName": "B-World Alpha 0.3.0 (Rework)",
+            "id": "030"
+        },
+        {
+            "displayName": "B-World Alpha 0.2.2",
+            "id": "022"
+        },
+        {
+            "displayName": "B-World Alpha 0.2.2",
+            "id": "021"
+        },
+        {
+            "displayName": "B-World Alpha 0.2.2",
+            "id": "020"
+        },
+        {
+            "displayName": "B-World Alpha 0.2.2",
+            "id": "016"
+        }
+    ]
+}

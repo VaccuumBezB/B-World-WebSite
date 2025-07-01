@@ -19,7 +19,7 @@ export default function SmoothFollower() {
     const handleMouseLeave = () => setIsHovering(false);
     window.addEventListener('mousemove', handleMouseMove);
     const interactiveElements = document.querySelectorAll(
-      'a, button, img, input, .link'
+      'a, button, img, input, .link, .version-container'
     );
     interactiveElements.forEach((element) => {
       element.addEventListener('mouseenter', handleMouseEnter);
@@ -74,8 +74,8 @@ export default function SmoothFollower() {
       <div
         className="pointer-child"
         style={{
-          width: isHovering? '0px' : '8px',
-          height: isHovering ? '0px' : '8px',
+          width: isHovering? '12px' : '8px',
+          height: isHovering ? '12px' : '8px',
           transform: 'translate(-50%, -50%)',
           left: `${renderPos.dot.x}px`,
           top: `${renderPos.dot.y}px`,
@@ -88,7 +88,7 @@ export default function SmoothFollower() {
         style={{
           width: isHovering ? '60px' : '28px',
           height: isHovering ? '60px' : '28px',
-          backdropFilter: isHovering ? 'invert(100%)' : 'unset',
+          backdropFilter: isHovering ? 'blur(10px)' : 'unset',
           transform: 'translate(-50%, -50%)',
           left: `${renderPos.border.x}px`,
           top: `${renderPos.border.y}px`,

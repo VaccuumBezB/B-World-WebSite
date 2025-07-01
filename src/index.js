@@ -170,17 +170,35 @@ function downloadTransition() {
   )
 }
 
-renderer.setAnimationLoop(renderFrame);
-
-window.addEventListener(
-  'resize',
-  () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
+function listAnimation()
+{
+  animate(
+    '.version-container',
+    {
+      delay: stagger(100),
+      y: [-120, 0],
+      opacity: [0, 1],
+      ease: 'outBounce',
+      composition: 2
+    }
+  ) 
+  Resize();
+  
+  console.log("Succesfully animated versions list");
+}
+function Resize()
+{
+  camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
 
     composer.setSize(window.innerWidth, window.innerHeight);
     renderer.setSize(window.innerWidth, window.innerHeight);
-  },
+}
+renderer.setAnimationLoop(renderFrame);
+
+window.addEventListener(
+  'resize',
+  Resize,
   false
 );
 
@@ -194,4 +212,4 @@ root.render(
 reportWebVitals();
 
 
-export { downloadTransition, startAnimation };
+export { downloadTransition, startAnimation, listAnimation };
