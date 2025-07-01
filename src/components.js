@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { createAnimatable } from 'animejs';
-import { downloadTransition, startAnimation } from './index';
+import { downloadTransition, startAnimation, listAnimation } from './index';
 
-const path = "./JSON/versions.json";
+const path = `${process.env.PUBLIC_URL}/JSON/versions.json`;
+const downloadpath = '';
 
 class MainPage extends React.Component {
 
@@ -53,6 +54,7 @@ class VersionsList extends React.Component {
         fetch(path)
             .then(response => response.json())
             .then(data => {
+                //console.log(data);
                 this.setState({ versions: data.versions });
             })
             .catch(error => {
@@ -60,7 +62,6 @@ class VersionsList extends React.Component {
                 this.setState({ error: `Не удалось загрузить версии: ${error.message}` });
             });
     }
-
     render() {
         const { versions, error } = this.state;
 
@@ -112,23 +113,33 @@ class DownloadPage extends React.Component {
 }
 
 
-const VersionElement = ({ id, displayName }) => (
-    <li>
-        <div>
-            <a href={"files/" + id + ".zip"}>
-                <h3>{displayName}</h3>
-                <p>{id}</p>
-            </a>
-        </div>
-    </li>
-);
+const VersionElement = ({ id, displayName }) => {
+    useEffect(() => {
+        listAnimation();
+    }, [])
+
+    return (
+        <li>
+            <div className='version-card'>
+                <a href={downloadpath + id + ".zip"}>
+                    <div className='version-container'>
+                        <div className='effects'></div>
+                        <div className='version'>
+                            <h3>{displayName}</h3>
+                            <p>{id}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </li >);
+};
 
 const DownloadButton = ({ onPageChange }) => {
     useEffect(() => {
         const animatable = createAnimatable('#dBtn', {
             x: 500,
             y: 500,
-            
+
         });
 
         const onMouseMove = (e) => {
