@@ -2,8 +2,10 @@
 
 *B-World Game website*
 
+### Version 3.0
+fully remade using React.js and THREE.js
+>**Patch 2**
+>fixed THREE.js-planet textures, made animations smoother
+
 ---
 for older versions - see branches.
-
->UPD:
->I don't know for what purpose I publish this on github 
