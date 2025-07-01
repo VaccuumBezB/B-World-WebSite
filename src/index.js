@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import './img/planet.jpg';
-import './img/atmos.png';
+/*import '../public/img/planet.jpg';
+import '../public/img/atmos.png';*/
 import reportWebVitals from './reportWebVitals';
 import * as THREE from 'three';
 import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
@@ -46,8 +46,8 @@ composer.addPass(bloomPass);
 const outputPass = new OutputPass();
 composer.addPass(outputPass);
 
-const texture = new THREE.TextureLoader().load('${process.env.PUBLIC_URL}/img/planet.jpg');
-const atmosphereTexture = new THREE.TextureLoader().load('${process.env.PUBLIC_URL}/img/atmos.png');
+const texture = new THREE.TextureLoader().load(`${process.env.PUBLIC_URL}/img/planet.jpg`);
+const atmosphereTexture = new THREE.TextureLoader().load(`${process.env.PUBLIC_URL}/img/atmos.png`);
 atmosphereTexture.premultiplyAlpha = true;
 
 const planetGeometry = new THREE.OctahedronGeometry(30, 8);
