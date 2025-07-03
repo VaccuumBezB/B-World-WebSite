@@ -3,7 +3,6 @@ import { createAnimatable } from 'animejs';
 import { downloadTransition, startAnimation, listAnimation } from './index';
 
 const path = `${process.env.PUBLIC_URL}/JSON/versions.json`;
-const downloadpath = '';
 
 class MainPage extends React.Component {
 
@@ -29,6 +28,7 @@ class MainPage extends React.Component {
                 <div className="item panel">
                     {"«Едва ли есть высшее из наслаждений, как наслаждение творить» (c) Н. Гоголь"}
                 </div>
+
                 <div className="item card">
                     <div className="card2" id="rect">
 
@@ -83,18 +83,21 @@ class VersionsList extends React.Component {
         }
 
         return (
-            <div>
-                <ul>
-                    {
-                        versions.map(version => (
-                            <VersionElement
-                                id={version.id}
-                                displayName={version.displayName}
-                                key={version.id}
-                            />
-                        ))
-                    }
-                </ul>
+            <div className='wrapper'>
+                <div className='scroll-section'>
+                    <ul>
+                        {
+                            versions.map(version => (
+                                <VersionElement
+                                    id={version.id}
+                                    displayName={version.displayName}
+                                    key={version.id}
+                                />
+                            ))
+                        }
+                    </ul>
+                </div>
+                <span className='handle'></span>
             </div>
         );
     }
@@ -121,12 +124,11 @@ const VersionElement = ({ id, displayName }) => {
     return (
         <li>
             <div className='version-card'>
-                <a href={downloadpath + id + ".zip"}>
+                <a href={id}>
                     <div className='version-container'>
                         <div className='effects'></div>
                         <div className='version'>
                             <h3>{displayName}</h3>
-                            <p>{id}</p>
                         </div>
                     </div>
                 </a>
@@ -175,7 +177,6 @@ const DownloadButton = ({ onPageChange }) => {
         </div>
     );
 }
-
 
 ///////////////////////////////////////////
 class Content extends React.Component {
