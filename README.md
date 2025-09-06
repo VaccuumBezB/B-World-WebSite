@@ -13,14 +13,14 @@ _B-World is an engaging game that offers a unique experience for players. This w
 - Clean and responsive design
 - Regular updates and improvements
 
-## Latest Release: Version 3.2
+## Latest Release: Version 3.3
 
-_Release Date:_ July 2025
+_Release Date:_ Sep 2025
 
-### What's New in 3.2
+### What's New in 3.3
 
 - **Bug Fixes:** Resolved several issues to improve overall stability and user experience.
-- **Improved Downloading:** Enhanced the download links.
+- **Add Launcher:** Now B-launcher can be downloaded from B-World Website.
 - **CSS Enhancements:** Updated and optimized CSS for a cleaner, more attractive, and responsive interface.
 
 ### Roadmap
