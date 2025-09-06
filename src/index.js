@@ -84,7 +84,7 @@ scene.add(atmosphereGlow);
 
 const ambientLightColor = 0xffffff;
 const ambientLightIntensity = 3;
-const ambientLight = new THREE.AmbientLight(ambientLightColor, ambientLightIntensity);
+const ambientLight = new THREE.DirectionalLight(ambientLightColor, ambientLightIntensity);
 scene.add(ambientLight);
 
 camera.position.z = 70;
@@ -130,7 +130,14 @@ function startAnimation() {
     scale: 1,
     duration: 1000,
     ease: "inOut(4)"
-  })
+  });
+  animate(ambientLight.position, {
+    x: [-10, 10, -10],
+    z: [10, -10, 10, -10],
+    loop: true,
+    duration: 125000,
+    ease: 'none'
+  });
 
 }
 
@@ -167,7 +174,7 @@ function downloadTransition() {
     {
       opacity: { form: 0, to: 1 }
     }
-  )
+  );
 }
 
 function listAnimation()
@@ -184,7 +191,7 @@ function listAnimation()
   ) 
   Resize();
   
-  console.log("Succesfully animated versions list");
+  console.log("Succesfully (maybe) animated versions list");
 }
 function Resize()
 {

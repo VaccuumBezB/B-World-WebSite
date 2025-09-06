@@ -3,6 +3,7 @@ import { createAnimatable } from 'animejs';
 import { downloadTransition, startAnimation, listAnimation } from './index';
 
 const path = `${process.env.PUBLIC_URL}/JSON/versions.json`;
+const launcherPath = ""; // TODO: ССЫЛКУ НА ЛАУНЧЕР СЮДААА
 
 class MainPage extends React.Component {
 
@@ -29,7 +30,7 @@ class MainPage extends React.Component {
                     {"«Едва ли есть высшее из наслаждений, как наслаждение творить» (c) Н. Гоголь"}
                 </div>
 
-                <div className="item card">
+                <div className="item card zero-start-scale">
                     <div className="card2" id="rect">
 
                         <h3>Список версий</h3>
@@ -106,10 +107,22 @@ class DownloadPage extends React.Component {
     render() {
         return (
             <div id="download-page">
-                <h2>Выберите версию</h2>
-                <p>для скачивания нажмите на карточку с версией</p>
+                <h2 translate="no">Скачивание B-World</h2>
+                <p>Для скачивания нажмите на карточку с версией</p>
 
                 <VersionsList></VersionsList>
+
+                <h2 className="bigcooltext">ИЛИ</h2>
+
+                <div className="launcher-container">
+                    <div className="card big-af">
+                        <div className="card2">
+                            <p>Загрузите лаунчер со всеми версиями</p><br/> 
+                            <p className="link">(рекомендовано)</p><br/>
+                            <a margin-bottom="20px" href={launcherPath} className="sparkle-button">Скачать!</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }
@@ -121,10 +134,10 @@ const VersionElement = ({ id, displayName }) => {
         listAnimation();
     }, [])
 
-    return (
+    return ( 
         <li>
             <div className='version-card'>
-                <a href={id}>
+                <a href={id}> 
                     <div className='version-container'>
                         <div className='effects'></div>
                         <div className='version'>
@@ -133,7 +146,8 @@ const VersionElement = ({ id, displayName }) => {
                     </div>
                 </a>
             </div>
-        </li >);
+        </li>
+    );
 };
 
 const DownloadButton = ({ onPageChange }) => {
